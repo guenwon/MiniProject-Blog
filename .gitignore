@@ -3,6 +3,7 @@ HELP.md
 .gradle
 .idea
 build/
+**/src/main/resources/application.properties
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
