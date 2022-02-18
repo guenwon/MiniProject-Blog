@@ -1,4 +1,6 @@
 package com.springboot.miniprojectblog.domain.blog;
 
-public class scrapContentsRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface scrapContentsRepository extends JpaRepository <scrapContents,Long> {
 }

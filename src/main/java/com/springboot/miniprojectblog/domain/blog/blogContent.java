@@ -27,7 +27,7 @@ public class blogContent {
     private byte[] content;
 
     @Temporal(TemporalType.TIME)
-    private Date date = new Date();
+    private Date date;
 
     private Long hits;
 
@@ -43,7 +43,7 @@ public class blogContent {
     private Long comments;
 
     @ManyToOne
-    @JoinColumn(name = blog_id)
+    @JoinColumn(name = "blog_id")
     private userBlog blogId;
 
     @Builder
