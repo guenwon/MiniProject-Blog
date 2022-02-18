@@ -1,4 +1,6 @@
 package com.springboot.miniprojectblog.domain.member;
 
-public class neighborsRepository {
+import org.springframework.data.repository.CrudRepository;
+
+public interface neighborsRepository extends CrudRepository<neighbors,Long> {
 }
