@@ -1,4 +1,6 @@
 package com.springboot.miniprojectblog.domain.blog;
 
-public class commentRepository {
+import org.springframework.data.repository.CrudRepository;
+
+public interface commentRepository extends CrudRepository<comment,Long> {
 }
