@@ -1,4 +1,4 @@
 package com.springboot.miniprojectblog.domain.member;
 
-public class neighborsRepository {
+public class Neighbors {
 }

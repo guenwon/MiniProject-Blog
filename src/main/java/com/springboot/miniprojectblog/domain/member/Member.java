@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor//기본 생성자 자동 추가
 @Entity
-public class member {
+public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userNum;
@@ -22,7 +22,7 @@ public class member {
     private String userId;
 
     @Builder
-    public member(Long userNum, String name, String userId){
+    public Member(Long userNum, String name, String userId){
         this.userNum = userNum;
         this.name = name;
         this.userId = userId;

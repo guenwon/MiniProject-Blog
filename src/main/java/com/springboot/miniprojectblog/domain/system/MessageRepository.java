@@ -1,4 +1,4 @@
 package com.springboot.miniprojectblog.domain.system;
 
-public class notification {
+public class MessageRepository {
 }

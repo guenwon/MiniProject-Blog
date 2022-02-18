@@ -1,4 +1,4 @@
 package com.springboot.miniprojectblog.domain.system;
 
-public class message {
+public class Message {
 }
