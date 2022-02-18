@@ -1,4 +1,6 @@
 package com.springboot.miniprojectblog.domain.system;
 
-public class notificationRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface notificationRepository extends JpaRepository<notification, Long> {
 }

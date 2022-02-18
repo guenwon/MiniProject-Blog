@@ -1,4 +1,6 @@
 package com.springboot.miniprojectblog.domain.system;
 
-public class messageRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface messageRepository extends JpaRepository<message,Long> {
 }
