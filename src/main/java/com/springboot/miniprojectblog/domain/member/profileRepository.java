@@ -2,5 +2,5 @@ package com.springboot.miniprojectblog.domain.member;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface profileRepository extends JpaRepository<profile,Long> {
+public interface profileRepository {//PK없어서 생성못함
 }

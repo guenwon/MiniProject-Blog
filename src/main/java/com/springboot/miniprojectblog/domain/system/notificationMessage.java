@@ -22,4 +22,12 @@ public class notificationMessage {
         this.notiKind=notiKind;
         this.notiMessage=notiMessage;
     }
+
+    public void setNotiKind(Long notiKind) {
+        this.notiKind = notiKind;
+    }
+
+    public void setNotiMessage(String notiMessage) {
+        this.notiMessage = notiMessage;
+    }
 }

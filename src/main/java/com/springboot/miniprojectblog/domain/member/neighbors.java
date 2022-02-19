@@ -13,11 +13,13 @@ public class neighbors {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long neighborId;
+
     @ManyToOne
-    @JoinColumn(name="userNum")
+    @JoinColumn(name="userNum",insertable=false, updatable=false)
     private member home;
+
     @ManyToOne
-    @JoinColumn(name="userNum")
+    @JoinColumn(name="userNum",insertable=false, updatable=false)
     private member neighbor;
 
     @Builder

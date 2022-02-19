@@ -5,16 +5,19 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
-import com.springboot.miniprojectblog.domain.member.member;
 
 @Getter
 @NoArgsConstructor // 기본 생성자 자동 추가
 @Entity
-public class profile {
+public class profile implements Serializable {
 
-            @OneToOne
-    @JoinColumn(name = "user_num")
+
+
+    @Id
+    @OneToOne
+    @JoinColumn(name = "user_num",insertable=false, updatable=false)
     private member member;
 
             @Column(nullable = false,length = 100)

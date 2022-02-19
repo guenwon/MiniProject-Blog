@@ -5,33 +5,38 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+
 import javax.persistence.*;
 
 @Getter
 @NoArgsConstructor
 @Entity
+
 public class notification {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long notiId;
 
     @ManyToOne
-    @JoinColumn(name = "MEMBER_USER_NUM")
-    private member receiverNum;
+    @JoinColumn(name = "userNum",insertable=false, updatable=false)
+    private member receiver;
 
     @ManyToOne
-    @JoinColumn(name = "MEMBER_USER_NUM")
-    private member senderNum;
+    @JoinColumn(name = "userNum",insertable=false, updatable=false)
+    private member sender;
 
     @ManyToOne
-    @JoinColumn(name= "NOTIFICATION_MESSAGE_NOTIKIND")
+    @JoinColumn(name= "notiKind")
     private notificationMessage notiKind;
 
     @Builder
-    public notification(Long notiId, member receiverNum, member senderNum, notificationMessage notiKind){
+    public notification(Long notiId, member receiver, member sender, notificationMessage notiKind){
         this.notiId=notiId;
-        this.receiverNum=receiverNum;
-        this.senderNum=senderNum;
+        this.receiver=receiver;
+        this.sender=sender;
         this.notiKind=notiKind;
     }
+
+
 }

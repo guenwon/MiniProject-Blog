@@ -16,11 +16,11 @@ public class message {
     private Long messageId;
 
     @ManyToOne
-    @JoinColumn(name = "MEMBER_USER_NUM")
+    @JoinColumn(name = "userNum",insertable=false, updatable=false)
     private member sender;
 
     @ManyToOne
-    @JoinColumn(name = "MEMBER_USER_NUM")
+    @JoinColumn(name = "userNum",insertable=false, updatable=false)
     private member receiver;
 
     @Column(length = 50000, nullable = false)

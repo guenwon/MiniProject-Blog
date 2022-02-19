@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.xml.stream.events.Comment;
 
 @Getter
 @NoArgsConstructor
@@ -21,7 +20,7 @@ public class comment {
     private blogContent contentId;
 
     @ManyToOne
-    @JoinColumn(name="userNum")
+    @JoinColumn(name="userNum",insertable=false, updatable=false)//PK foreign key로 참조시 체크 필요
     private member userNum;
 
 

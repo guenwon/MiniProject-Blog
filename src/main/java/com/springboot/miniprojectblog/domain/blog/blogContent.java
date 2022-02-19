@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-import java.sql.Blob;
 import java.sql.Date;
 
 @Getter
@@ -14,20 +13,16 @@ import java.sql.Date;
 @Entity
 public class blogContent {
 
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long contentId;
-
-
 
     @Lob
     @Column(length=100000)
     private byte[] content;
 
-    @Temporal(TemporalType.TIME)
-    private Date date;
+    @CreationTimestamp
+    private Date regdate;
 
     private Long hits;
 
@@ -43,7 +38,7 @@ public class blogContent {
     private Long comments;
 
     @ManyToOne
-    @JoinColumn(name = "blog_id")
+    @JoinColumn(name = "blogId")
     private userBlog blogId;
 
     @Builder
@@ -52,7 +47,7 @@ public class blogContent {
                        Long comments, userBlog blogId){
 
         this.contentId = contentId;
-        this.date = date;
+        this.regdate = date;
         this.hits = hits;
         this.fileName = fileName;
         this.filePath = filePath;
@@ -66,7 +61,7 @@ public class blogContent {
     }
 
     public void setDate(Date date) {
-        this.date = date;
+        this.regdate = date;
     }
 
     public void setHits(Long hits) {

@@ -3,7 +3,6 @@ package com.springboot.miniprojectblog.domain.blog;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
 
 import com.springboot.miniprojectblog.domain.member.member;
@@ -18,17 +17,17 @@ public class userBlog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long blogId;
 
-        @OneToOne
-   @JoinColumn(name = "user_num")
+    @OneToOne
+    @JoinColumn(name = "user_num",insertable=false, updatable=false)
     private member member;
 
-           @Column(length = 100, nullable = false)
+    @Column(length = 100, nullable = false)
     private String category;
 
-            @Builder
+    @Builder
     public userBlog(Long blogId, member member, String category){
                 this.blogId = blogId;
                 this.member = member;
                 this.category = category;
-            }
+    }
 }
